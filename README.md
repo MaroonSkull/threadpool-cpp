@@ -2,21 +2,21 @@
 
 This repository contains a straightforward implementation of a thread pool using pure C++20 standard library features. The thread pool allows for efficient management and execution of multiple concurrent tasks, making it a valuable tool for boosting the performance of multithreaded applications.
 
-## Features
+## 1. Features
 
-- Modern C++20: Utilizes the latest features of C++20 for enhanced performance and simplicity.
-- Dynamic Task Management: Easily add tasks to the pool and have them executed by available threads.
-- Thread Safety: Ensures safe concurrent execution of tasks.
-- Scalable: Automatically manages the number of threads based on the system's capabilities.
+- [ ] *Modern C++20*: Utilizes the latest features of C++20 for enhanced performance and simplicity.
+- [ ] *Dynamic Task Management*: Easily add tasks to the pool and have them executed by available threads.
+- [ ] *Thread Safety*: Ensures safe concurrent execution of tasks.
+- [ ] *Scalable*: Automatically manages the number of threads based on the system's capabilities.
 
-## Getting Started
+## 2. Getting Started
 
-### Prerequisites
+### 2.1. Prerequisites
 
-A C++20 compatible compiler (e.g., GCC 10+, Clang 10+, MSVC 2019+)
-CMake (optional, for building examples and tests)
+1. A C++20 compatible compiler (e.g., GCC 10+, Clang 10+, MSVC 2019+)
+2. CMake (optional, for building examples and tests)
 
-### Building
+### 2.2. Building
 
 To build the project, you can use the following CMake commands:
 
@@ -27,7 +27,7 @@ cmake ..
 cmake -B .
 ```
 
-## Usage
+## 3. Usage
 
 Here is a basic example of how to use the thread pool:
 
@@ -48,14 +48,16 @@ int main() {
 }
 ```
 
-## Documentation
+## 4. Documentation
 
 - Code Documentation: Inline comments and documentation are provided within the source code.
 - Examples: Check the examples directory for more usage examples.
 
-## Contributing
+## 5. Contributing
+
 We welcome contributions! Please fork the repository and submit pull requests.
 
-## License
+## 6. License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
