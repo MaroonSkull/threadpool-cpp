@@ -1,6 +1,14 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.15)
+
+include(cmake/utils.cmake)
+include(GNUInstallDirs)
+
+get_version(lib_version)
+
+message(STATUS "project version: ${lib_version}")
+
 project(threadpool-cpp
-    VERSION 1.0.0
+    VERSION ${lib_version}
     DESCRIPTION "Template for C++ library built with CMake"
     LANGUAGES CXX)
 
@@ -8,8 +16,6 @@ project(threadpool-cpp
 # general settings and options
 #----------------------------------------------------------------------------------------------------------------------
 
-include(cmake/utils.cmake)
-include(GNUInstallDirs)
 
 string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" is_top_level)
 

@@ -52,7 +52,7 @@ endfunction()
 #
 # Get project version.
 # If VERSION file exists, read it. Otherwise, use `git describe` command.
-# If version cannot be determined via git, set version to "v0.0.0"
+# If version cannot be determined via git, set version to "v0.0.0" and skip generation
 #
 # OUTPUT: project version
 #
