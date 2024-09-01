@@ -4,10 +4,10 @@ This repository contains a straightforward implementation of a thread pool using
 
 ## 1. Features
 
-- [ ] *Modern C++20*: Utilizes the latest features of C++20 for enhanced performance and simplicity.
-- [ ] *Dynamic Task Management*: Easily add tasks to the pool and have them executed by available threads.
-- [ ] *Thread Safety*: Ensures safe concurrent execution of tasks.
-- [ ] *Scalable*: Automatically manages the number of threads based on the system's capabilities.
+- [ ] **Modern C++20**: Utilizes the latest features of C++20 for enhanced performance and simplicity.
+- [ ] **Dynamic Task Management**: Easily add tasks to the pool and have them executed by available threads.
+- [ ] **Thread Safety**: Ensures safe concurrent execution of tasks.
+- [ ] **Scalable**: Automatically manages the number of threads based on the system's capabilities.
 
 ## 2. Getting Started
 
@@ -21,10 +21,17 @@ This repository contains a straightforward implementation of a thread pool using
 To build the project, you can use the following CMake commands:
 
 ```sh
-mkdir build
-cd build
-cmake ..
-cmake -B .
+cmake -B build && cmake --build build && sudo cmake --install build
+```
+or, step-by-step:
+```sh
+cmake -B build
+```
+```sh
+cmake --build build
+```
+```sh
+sudo cmake --install build
 ```
 
 ## 3. Usage
@@ -32,12 +39,18 @@ cmake -B .
 Here is a basic example of how to use the thread pool:
 
 ```cpp
-#include "ThreadPool.h"
+#include <threadpool-cpp/threadpool-cpp.h>
+
+#include <thread>
 #include <iostream>
 
-int main() {
-    ThreadPool pool(4); // Create a thread pool with 4 threads
-
+int main(int, char*[]) {
+    using namespace tp = threadpoolcpp;
+    
+    int threads = std::thread::hardware_concurrency() ? std::thread::hardware_concurrency() : 4;
+    auto tp::pool(threads); // Create a thread pool with hardware concurrency (or 4 by default) threads
+    
+    // Add a task to the thread pool
     auto result = pool.enqueue([] {
         return "Hello from the thread pool!";
     });
